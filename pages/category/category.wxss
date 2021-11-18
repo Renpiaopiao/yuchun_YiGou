@@ -1,0 +1,33 @@
+/* pages/category/category.wxss */
+
+.scrollcon {
+	height: calc(100vh - 90rpx);
+	display: flex;
+}
+
+.leftcon{
+	/* 伸缩盒子的默认高度继承100% */
+	flex: 2;
+}
+
+.rightcon {
+	flex: 5;
+}
+
+.name {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80rpx;
+	font-size: 30rpx;
+}
+
+.list {
+	display: flex;
+	/* 自动换行 */
+	flex-wrap: wrap;
+}
+
+.listnavi {
+	width: 33.3%;
+}

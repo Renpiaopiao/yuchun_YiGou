@@ -1,0 +1,15 @@
+/**app.wxss**/
+page,
+text,
+view,
+navigator,
+swiper,
+swiper-item,
+image {
+	/*设置组件全局边距*/
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-size: 28rpx;
+}
+

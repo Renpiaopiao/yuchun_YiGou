@@ -1,0 +1,18 @@
+/* components/search/search.wxss */
+
+.serchinput {
+	background-color: #f8554d;
+	height: 90rpx;
+	padding: 10rpx;
+}
+
+.search {
+	background-color: #fff;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15rpx;
+	color: #a0a19f;
+}
+

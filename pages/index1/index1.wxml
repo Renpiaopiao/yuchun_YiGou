@@ -1,0 +1,32 @@
+<!--pages/index1/index1.wxml-->
+<view class="bg">
+	<search></search>
+	<view class="indexswiper">
+		<swiper class="swiper_" autoplay="true" interval="3000" indicator-dots="true" circular="true">
+			<swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+				<navigator>
+					<image src="{{item.image_src}}" mode="widthFix" class="swiper_img"></image>
+				</navigator>
+			</swiper-item>
+		</swiper>
+	</view>
+	<view class="navibar">
+		<navigator class="navi" wx:for="{{navilist}}" wx:key="name">
+			<image src="{{item.image_src}}" mode="widthFix" class="navi_img"></image>
+		</navigator>
+	</view>
+	<!-- 楼层 -->
+	<view class="floor">
+		<view class="floor_container" wx:for="{{floorlist}}" wx:key="floor_title" wx:for-item="item1" wx:for-index="index1">
+			<view class="floor_title">
+				<image src="{{item1.floor_title.image_src}}" mode="widthFix"></image>
+			</view>	
+			<view class="floor_content" >
+				<navigator class="floor_content_navi" wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2">
+					<image class="floor_content_img" src="{{item2.image_src}}"
+					mode="{{ index2===0? 'widthFix':'scaleToFill'}}"></image>
+				</navigator>
+			</view>
+		</view>
+	</view>
+</view>
