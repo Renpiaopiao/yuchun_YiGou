@@ -1,2 +1,24 @@
 <!--pages/goods_list/goods_list.wxml-->
-<text>pages/goods_list/goods_list.wxml</text>
+<search></search>
+<tabs Tabs="{{tabs}}" bind:handleclick = "changeactive">
+	<block wx:if="{{tabs[0].isActive}}">
+		<view class="tab">
+			<view class="goods_item">
+				<navigator 
+				class="goods_navi"  wx:for="{{goodslist}}" wx:key="goods_id"
+				url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}"
+				>
+					<view class="imgcontainer">
+						<image src="{{item.goods_small_logo?item.goods_small_logo:'/images/no_pic.png'}}" mode="widthFix"></image>
+					</view>
+					<view class="goods_info">
+						<view class="goods_name">{{item.goods_name}}</view>
+						<view class="goods_price">￥{{item.goods_price}}</view>
+					</view>
+				</navigator>
+			</view>
+		</view>
+	</block>
+	<block wx:if="{{tabs[1].isActive}}">1</block>
+	<block wx:if="{{tabs[2].isActive}}">2</block>
+</tabs>	

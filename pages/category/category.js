@@ -6,7 +6,9 @@ Page({
 	 */
 	data: {
 		lefttitle:[],
-		rightcontent:[]
+		rightcontent:[],
+		currentindex:0,
+		scrolltop:0
 	},
 	goodslist:[],
 
@@ -16,6 +18,10 @@ Page({
 			url: 'https://api-hmugo-web.itheima.net/api/public/v1/categories',
 			success (res) {
 				that.goodslist = res.data.message;
+
+				// 2、存入本地缓存
+				wx.setStorageSync("goodslist",{time:Date.now(),data:that.goodslist})
+						
 				let lefttitle = that.goodslist.map(v => v.cat_name)
 				let rightcontent = that.goodslist[0].children;
 
@@ -26,11 +32,40 @@ Page({
 			}
 		})
 	},
+	changename:function(e){
+		var index = e.currentTarget.dataset.index;
+		let rightcontent = this.goodslist[index].children;
+
+		this.setData({
+			currentindex:index,
+			rightcontent:rightcontent,
+			scrolltop:0
+		})
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		this.getgoodslist();
+		// 判断本地是否有数据缓存
+		const goodslist = wx.getStorageSync("goodslist")
+		if(!goodslist){
+			this.getgoodslist();
+		}else{
+			// 缓存过期后重发请求
+			if(Date.now() - goodslist.time > 1000*10){
+				this.getgoodslist();
+			}else{
+				// 没过期设置本地数据
+				this.goodslist = goodslist.data;
+				let lefttitle = this.goodslist.map(v => v.cat_name)
+				let rightcontent = this.goodslist[0].children;
+
+				this.setData({
+					lefttitle:lefttitle,
+					rightcontent:rightcontent,
+				})
+			}
+		}
 	},
 
 	/**

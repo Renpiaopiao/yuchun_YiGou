@@ -1,1 +1,43 @@
 /* pages/goods_list/goods_list.wxss */
+
+.goods_navi {
+	display: flex;
+}
+
+.imgcontainer{
+	flex:2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imgcontainer image{
+	width: 70%;
+}
+
+.goods_info {
+	flex: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.goods_name {
+	/*从第二行开始 让省略号 */
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.goods_price {
+	color:#f8554d;
+	font-size: 32rpx;
+}
+
+.goods_item {
+	border-bottom: 1px solid #ccc;
+}
+
+
+

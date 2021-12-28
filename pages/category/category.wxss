@@ -22,6 +22,11 @@
 	font-size: 30rpx;
 }
 
+.active {
+	color: #f8554d;
+	border-left: 2px solid #f8554d;
+}
+
 .list {
 	display: flex;
 	/* 自动换行 */
@@ -30,4 +35,20 @@
 
 .listnavi {
 	width: 33.3%;
+}
+
+.title {
+	height: 80rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.xiexian {
+	padding: 0 10rpx;
+	color: #ccc;
+}
+
+.goodsname {
+	text-align: center;
 }

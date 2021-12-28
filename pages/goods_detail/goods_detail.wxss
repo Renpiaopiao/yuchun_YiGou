@@ -1,1 +1,110 @@
 /* pages/goods_detail/goods_detail.wxss */
+page {
+	/* 需要把固定定位的高撑上去，不然底部会被遮挡 */
+	padding-bottom: 90rpx;
+}
+.detail_swiper {
+	height: 70vw;
+	text-align: center;
+}
+
+.detail_swiper image {
+	width: 60%;
+}
+
+.price {
+	padding: 15rpx;
+	font-size: 32rpx;
+	color: #f8554d;
+	font-weight: 700;
+}
+
+.goodsbox{
+	border-top: 5rpx solid #dedede;
+	border-bottom: 5rpx solid #dedede;	
+	padding: 10rpx 0;
+	display: flex;
+}
+
+.goods_des {
+	flex: 5;
+	font-size: 30rpx;
+	padding: 0 10rpx;
+
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.collectbox {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-left: 1px solid #000;
+}
+
+.des {
+	font-size: 32rpx;
+	color: #f8554d;
+	font-weight: 600;
+	padding: 20rpx;
+	border-bottom: 5rpx solid #dedede;	
+}
+
+.bar {
+	display: flex;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 90rpx;
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+}
+
+.item {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.ins {
+	font-size: 24rpx;
+}
+
+button {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.item1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 2;
+	color: #fff;
+	background-color: #e19a13;
+	font-size: 30rpx;
+	font-weight: 600rpx;
+}
+
+.item2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 2;
+	color: #fff;
+	background-color: #e45b54;
+	font-size: 30rpx;
+	font-weight: 600rpx;
+}
