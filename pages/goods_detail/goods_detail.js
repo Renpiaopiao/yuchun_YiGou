@@ -56,7 +56,7 @@ Page({
 	//添加购物车
 	cartAdd:function(){
 		// 1、从缓存获取购物车  转换成[]格式
-		var cart = wx.getStorageSync('cart')||[];
+		var cart = wx.getStorageSync('cart')||[];   //||[] 如果返回为空，则
 		// 2、判断商品对象是否存在于购物车数组中
 		var index = cart.findIndex(v=>v.goods_id === this.goodsinfo.goods_id);
 		if(index === -1){
