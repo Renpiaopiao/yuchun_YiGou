@@ -8,6 +8,43 @@ Page({
 
 	},
 
+	handleGetAddress:function(){
+		console.log('dian ji le');
+		// wx.chooseAddress({
+		//   success: (result) => {
+		// 	  console.log(result);
+		//   },
+		// })
+
+		wx.getSetting({
+		  withSubscriptions: true,
+		  success: (result) => {
+			  console.log(result);
+			  const scopeAddress = result.authSetting['scope.address'];
+			  if(scopeAddress === true || scopeAddress === undefined){
+				  wx.chooseAddress({
+					success: (result1) => {
+						console.log('result1-------------',result1);
+					},
+				  })
+			  }else{  //用户之前拒绝了授权
+				  wx.openSetting({
+					  success:(result) => {
+						wx.chooseAddress({
+							success: (result2) => {
+								console.log('result2-------------',result1);
+							},
+						  })
+					  }
+				  })				
+			  }
+		  },
+		  fail: (res) => {},
+		  complete: (res) => {},
+		})
+	},
+
+
 	/**
 	 * 生命周期函数--监听页面加载
 	 */

@@ -1,2 +1,6 @@
 <!--pages/cart/cart.wxml-->
-<text>.wxml</text>
+<view class="recive_adress">
+	<view class="address_con">
+		<button type="primary" plain bindtap="handleGetAddress">获取地址</button>
+	</view>
+</view>

@@ -1,1 +1,7 @@
 /* pages/cart/cart.wxss */
+.address_con {
+	padding: 20px 0;
+}
+.address_con .address_con {
+	width: 60%;
+}
