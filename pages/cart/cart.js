@@ -1,6 +1,8 @@
-// pages/cart/cart.js
-Page({
+// pages/cart/cart.js\
+// import {getSetting,chooseAddress,openSetting} from '../../utils/asyncWx.js'
 
+Page({
+	
 	/**
 	 * 页面的初始数据
 	 */
@@ -10,12 +12,6 @@ Page({
 
 	handleGetAddress:function(){
 		console.log('dian ji le');
-		// wx.chooseAddress({
-		//   success: (result) => {
-		// 	  console.log(result);
-		//   },
-		// })
-
 		wx.getSetting({
 		  withSubscriptions: true,
 		  success: (result) => {
@@ -25,14 +21,17 @@ Page({
 				  wx.chooseAddress({
 					success: (result1) => {
 						console.log('result1-------------',result1);
+						result1.all = result1.provinceName + result1.cityName + result1.countyName + result1.detailInfo;
+						wx.setStorageSync('address', result1)
 					},
 				  })
 			  }else{  //用户之前拒绝了授权
 				  wx.openSetting({
-					  success:(result) => {
+					  success:(result) => {	
 						wx.chooseAddress({
 							success: (result2) => {
-								console.log('result2-------------',result1);
+								console.log('result2-------------',result2);
+								wx.setStorageSync('address', result2)
 							},
 						  })
 					  }
@@ -63,7 +62,10 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+			const address = wx.getStorageSync('address')
+			this.setData({
+				address
+			})
 	},
 
 	/**

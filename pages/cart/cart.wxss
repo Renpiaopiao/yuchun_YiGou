@@ -2,6 +2,133 @@
 .address_con {
 	padding: 20px 0;
 }
+
 .address_con .address_con {
 	width: 60%;
 }
+
+.address_con1 {
+	display: flex;
+	padding: 19rpx;
+}
+
+.user_info {
+	flex: 5;
+}
+
+.user_num {
+	flex: 3;
+	text-align: right;
+}
+
+.cart_title {
+	padding: 20rpx;
+	font-size: 36rpx;
+	border-top: 1rpx solid #f8554d;
+	border-bottom: 1rpx solid #f8554d;
+}	
+
+.cart_item {
+	display: flex;
+	padding: 10rpx;
+	border-bottom: 1px solid #ccc;
+}
+
+.cart_checkbox {
+	flex:1;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cart_img {
+	flex:2;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cart_img image {
+	width: 80%;
+}
+
+.cart_info {
+	flex: 4;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.cart_name {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	color: #666;
+}
+
+.cart_price_wrap {
+	display: flex;
+	justify-content: space-between ;
+}
+
+.cart_price {
+	color: #f8554d;
+}
+
+.cart_bar {
+	display: flex;
+}
+
+.cart_edit {
+	width: 55rpx;
+	height: 55rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1rpx solid #ccc;
+}
+
+.cart_number {
+	width: 55rpx;
+	height: 55rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 工具栏 */
+.cart_price_tool {
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.cart_chk_all {
+	flex: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.cart_price_total {
+	flex: 4;
+	text-align: right;
+}
+
+.total_number text {
+	color: #f8554d;
+	font-size: 32rpx;
+}
+
+.cart_total_btn {
+	background-color: #ea444f;
+}
+
+.cart_total_btn {
+	flex: 2;
+}
+
+ 
